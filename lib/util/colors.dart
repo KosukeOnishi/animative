@@ -1,7 +1,6 @@
 import 'package:animative/index.dart';
 
 abstract class ColorCustom {
-  static const readhubBlue = Color(0xff102b7c);
   static const accentBlue = Color(0xff0391ff);
   static const textGrey = Color(0xff16171b);
   static const subTextGrey = Color(0xff757575);

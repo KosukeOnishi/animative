@@ -5,8 +5,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with TickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   AnimationController _controller;
   Animation _opacityAnimation;
   Animation _paddingAnimation;
@@ -18,6 +17,7 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: Duration(milliseconds: 2000),
     );
+
     _opacityAnimation = Tween(
       begin: 0.0,
       end: 1.0,
@@ -27,6 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
         curve: Interval(0.0, 1.0),
       ),
     );
+
     _paddingAnimation = EdgeInsetsTween(
       begin: EdgeInsets.only(top: 64),
       end: EdgeInsets.only(top: 10.0),
@@ -46,6 +47,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    //AnimationControllerのforward()が呼ばれ、アニメーションが開始される
     _controller.forward();
     return Scaffold(
       body: Container(
@@ -55,13 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              stops: [
-                0.0,
-                0.2,
-                0.4,
-                0.9,
-                1.0
-              ],
+              stops: [0.0, 0.2, 0.4, 0.9, 1.0],
               colors: <Color>[
                 Colors.blue[900],
                 Colors.blue[700],

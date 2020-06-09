@@ -9,7 +9,25 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.0, 0.2, 1.0],
+            colors: <Color>[
+              Colors.blue[900],
+              Colors.blue[700],
+              Colors.blue[50],
+            ],
+          ),
+        ),
+        child: Center(
+          child: Text('test'),
+        ),
+      ),
     );
   }
 }

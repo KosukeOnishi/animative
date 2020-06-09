@@ -7,6 +7,7 @@ class App extends StatelessWidget {
       title: 'animative',
       theme: theme,
       home: FutureBuilder(
+        //TODO:ここで初期化処理を行う
         future: Future.delayed(Duration(milliseconds: 3000)),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting ||

@@ -2,8 +2,8 @@ import 'package:animative/index.dart';
 
 abstract class TextStyleCustom {
   static TextTheme textTheme = TextTheme(
-    body1: normalFont,
-    title: boldFont.copyWith(color: Colors.white),
+    bodyText2: normalFont,
+    headline6: boldFont.copyWith(color: Colors.white),
   );
 
   //general
