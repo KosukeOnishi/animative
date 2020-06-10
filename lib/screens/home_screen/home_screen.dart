@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: Duration(milliseconds: 300),
     );
     _controller.forward();
   }
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     print(_controller.value);
     return Scaffold(
       body: GestureDetector(
-        onDoubleTap: _toggle,
+        onTap: _toggle,
         child: Container(
           width: double.infinity,
           height: double.infinity,
@@ -49,8 +49,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             child: AnimatedBuilder(
               animation: _controller,
               builder: (context, child) {
+                double scale = 0.2 + (0.8 * _controller.value);
                 return Transform.scale(
-                  scale: _controller.value,
+                  scale: scale,
                   child: Text(
                     'scale',
                     style: TextStyle(fontSize: 40),

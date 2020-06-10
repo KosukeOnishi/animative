@@ -6,6 +6,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'animative',
       theme: theme,
+      debugShowCheckedModeBanner: false,
       home: FutureBuilder(
         //TODO:ここで初期化処理を行う
         future: Future.delayed(Duration(milliseconds: 3000)),
